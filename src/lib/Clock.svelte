@@ -112,43 +112,51 @@
     inset: 0;
   }
   .step {
-    position: absolute;
-    inset: 0;
     --rotation: 0deg;
+    --top: 1;
+    --height: 3;
+    --width: 0.4;
+
+    position: absolute;
+
+    top: calc(1% * var(--top));
+    left: calc(50% - 1% * var(--width) / 2);
+    width: calc(1% * var(--width));
+    height: calc(1% * var(--height));
+
     transform: rotateZ(var(--rotation));
-    transform-origin: 50%;
-    --top: 1%;
-    --height: 3%;
-    --width: 0.4%;
+    transform-origin: 50% calc((50 - var(--top)) * 100% / var(--height));
+
+    background: #000;
+    border-radius: 2px;
+
     &.minor {
-      --height: 5%;
-      --width: 0.6%;
+      --height: 5;
+      --width: 0.6;
     }
     &.major {
-      --top: 0.8%;
-      --height: 5%;
-      --width: 1.5%;
-    }
-    &:after {
-      content: '';
-      background: #000;
-      height: var(--height);
-      left: calc(50% - (var(--width) / 2));
-      position: absolute;
-      top: var(--top);
-      transform-origin: 50% 100%;
-      width: var(--width);
-      border-radius: 2px;
+      --top: 0.8;
+      --height: 5;
+      --width: 1.5;
     }
   }
   .number {
     --rotation: 0deg;
+    --top: 7;
+    --height: 10;
+    --width: 10;
+
     position: absolute;
-    inset: 0;
+    top: calc(1% * var(--top));
+    left: calc(50% - 1% * var(--width) / 2);
+    height: calc(1% * var(--height));
+    width: calc(1% * var(--width));
+
     text-align: center;
-    padding-top: 7%;
 
     transform: rotateZ(var(--rotation));
+    transform-origin: 50% calc((50 - var(--top)) * 100% / var(--height));
+
     & span {
       position: relative;
       display: block;
