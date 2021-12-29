@@ -86,7 +86,7 @@
 <style lang="postcss">
   .clock {
     border-radius: 50%;
-    background-color: #ddd;
+    background-color: #ddfffa;
     position: relative;
     height: 20em;
     width: 20em;
